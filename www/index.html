@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+		<meta charset='UTF-8' />
+		<title>Github Search</title>
+		<link href="./jqtouch/jqtouch.min.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="./jqtouch/themes/apple/theme.min.css" media="screen" rel="stylesheet" type="text/css" />
+		<script src="./jqtouch/jquery.1.3.2.min.js" type="text/javascript"></script>
+		<script src="./jqtouch/jqtouch.min.js" type="text/javascript"></script>
+		<script src="mobile.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div class="current" id="home">
+			<div class="toolbar">
+				<h1>Github Search</h1>
+			</div>
+			
+			<div id="container">
+				<div id="progress" style="display: none;">Loading...</div>
+									
+				<div id="overview" align="center">
+				
+					<form action="/search" class="search_repos" id="search_form" method="get">
+						<select id="type_value" name="type">
+							<option value="Everything" selected="selected">Everything</option>
+							<option value="Repositories">Repositories</option>
+							<option value="Users">Users</option>
+							<option value="Code">Code</option>
+						</select>
+						
+						<span>written in</span>
+						
+						<select name="language">
+							<option value="">Any Language</option>
+							<option value="actionscript">ActionScript</option>
+
+							<option value="c">C</option>
+							<option value="csharp">C#</option>
+							<option value="cpp">C++</option>
+							<option value="css">CSS</option>
+							<option value="common-lisp">Common Lisp</option>
+							<option value="diff">Diff</option>
+							<option value="erlang">Erlang</option>
+							<option value="html">HTML</option>
+							<option value="haskell">Haskell</option>
+
+							<option value="java">Java</option>
+							<option value="javascript">JavaScript</option>
+							<option value="lua">Lua</option>
+							<option value="objective-c">Objective-C</option>
+							<option value="php">PHP</option>
+							<option value="perl">Perl</option>
+							<option value="python">Python</option>
+							<option value="ruby">Ruby</option>
+							<option value="sql">SQL</option>
+
+							<option value="scala">Scala</option>
+							<option value="scheme">Scheme</option>
+							<option value="tex">TeX</option>
+							<option value="xml">XML</option>
+							<option value="  ">---</option>
+							<option value="aspx-vb">ASP</option>
+							<option value="applescript">AppleScript</option>
+							<option value="arc">Arc</option>
+							<option value="nasm">Assembly</option>
+
+							<option value="bat">Batchfile</option>
+							<option value="befunge">Befunge</option>
+							<option value="boo">Boo</option>
+							<option value="brainfuck">Brainfuck</option>
+							<option value="c-objdump">C-ObjDump</option>
+							<option value="clojure">Clojure</option>
+							<option value="coffeescript">CoffeeScript</option>
+							<option value="cfm">ColdFusion</option>
+							<option value="cpp-objdump">Cpp-ObjDump</option>
+
+							<option value="cucumber">Cucumber</option>
+							<option value="d">D</option>
+							<option value="d-objdump">D-ObjDump</option>
+							<option value="dpatch">Darcs Patch</option>
+							<option value="delphi">Delphi</option>
+							<option value="dylan">Dylan</option>
+							<option value="eiffel">Eiffel</option>
+							<option value="ocaml">F#</option>
+							<option value="fortran">FORTRAN</option>
+
+							<option value="gas">GAS</option>
+							<option value="genshi">Genshi</option>
+							<option value="pot">Gettext Catalog</option>
+							<option value="go">Go</option>
+							<option value="groff">Groff</option>
+							<option value="groovy">Groovy</option>
+							<option value="html+django">HTML+Django</option>
+							<option value="html+erb">HTML+ERB</option>
+							<option value="html+php">HTML+PHP</option>
+
+							<option value="haxe">HaXe</option>
+							<option value="haml">Haml</option>
+							<option value="ini">INI</option>
+							<option value="irc">IRC log</option>
+							<option value="io">Io</option>
+							<option value="jsp">Java Server Pages</option>
+							<option value="llvm">LLVM</option>
+							<option value="lhs">Literate Haskell</option>
+							<option value="makefile">Makefile</option>
+
+							<option value="mako">Mako</option>
+							<option value="markdown">Markdown</option>
+							<option value="matlab">Matlab</option>
+							<option value="max/msp">Max/MSP</option>
+							<option value="minid">MiniD</option>
+							<option value="moocode">Moocode</option>
+							<option value="myghty">Myghty</option>
+							<option value="numpy">NumPy</option>
+							<option value="objdump">ObjDump</option>
+
+							<option value="objective-j">Objective-J</option>
+							<option value="pir">Parrot Internal Representation</option>
+							<option value="pure-data">Pure Data</option>
+							<option value="pytb">Python traceback</option>
+							<option value="r">R</option>
+							<option value="rhtml">RHTML</option>
+							<option value="racket">Racket</option>
+							<option value="raw">Raw token data</option>
+							<option value="rebol">Rebol</option>
+
+							<option value="redcode">Redcode</option>
+							<option value="sass">Sass</option>
+							<option value="self">Self</option>
+							<option value="bash">Shell</option>
+							<option value="smalltalk">Smalltalk</option>
+							<option value="smarty">Smarty</option>
+							<option value="supercollider">SuperCollider</option>
+							<option value="tcl">Tcl</option>
+							<option value="tcsh">Tcsh</option>
+
+							<option value="text">Text</option>
+							<option value="textile">Textile</option>
+							<option value="vhdl">VHDL</option>
+							<option value="vala">Vala</option>
+							<option value="verilog">Verilog</option>
+							<option value="vim">VimL</option>
+							<option value="visual-basic">Visual Basic</option>
+							<option value="yaml">YAML</option>
+							<option value="mupad">mupad</option>
+
+							<option value="ooc">ooc</option>
+							<option value="rst">reStructuredText</option>
+						</select>
+
+						<input class="text" type="text" name="q" value="ruby gem" style="width: 34.5em;" />
+						
+						<input type="hidden" id="repo_value" name="repo" value="" />
+						<input type="hidden" id="lang_value" name="langOverride" value="">
+						<input type="hidden" id="start_value" name="start_value" value="1" />
+
+						<ul class="rounded">
+							<li><a class="whiteButton" href="#" id="github_search_button">Search</a></li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			
+			<div id="info">
+				We are not affiliated with Github
+			</div>
+		</div>
+	</body>
+</html>
